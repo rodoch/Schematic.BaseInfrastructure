@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>Schematic.BaseInfrastructure</PackageId>
-    <Version>0.1.4</Version>
+    <Version>0.1.5</Version>
     <Authors>Ronan Doherty</Authors>
     <Description></Description>
     <PackageProjectUrl>https://github.com/rodoch/Schematic.BaseInfrastructure/</PackageProjectUrl>
@@ -16,7 +16,7 @@
   <ItemGroup>
     <PackageReference Include="Gaois.Localizer" Version="0.6.6-alpha" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.1.1" />
-    <PackageReference Include="Schematic.Core" Version="0.1.10" />
+    <PackageReference Include="Schematic.Core" Version="0.1.12" />
     <PackageReference Include="Schematic.Identity" Version="0.1.4" />
   </ItemGroup>
 
