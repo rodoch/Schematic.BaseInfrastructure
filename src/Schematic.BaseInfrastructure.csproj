@@ -2,15 +2,18 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>Schematic.BaseInfrastructure</PackageId>
+    <PackageTags>schematic;cms;email</PackageTags>
     <Version>0.1.6</Version>
     <Authors>Ronan Doherty</Authors>
-    <Description></Description>
+    <Company>Ronan Doherty</Company>
+    <Description>Base infrastructure services for the Schematic CMS framework</Description>
+    <PackageIconUrl></PackageIconUrl>
     <PackageProjectUrl>https://github.com/rodoch/Schematic.BaseInfrastructure/</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/rodoch/Schematic.BaseInfrastructure/blob/master/LICENSE</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/rodoch/Schematic.BaseInfrastructure/</RepositoryUrl>
-    <PackageTags>schematic cms email</PackageTags>
     <PackageReleaseNotes>Prerelease</PackageReleaseNotes>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
