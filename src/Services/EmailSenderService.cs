@@ -8,35 +8,35 @@ namespace Schematic.BaseInfrastructure
 {
     public class EmailSenderService : IEmailSenderService
     {
-        protected readonly IOptionsMonitor<SchematicSettings> Settings;
-        protected readonly EmailSettings EmailSettings;
+        private readonly IOptionsMonitor<SchematicSettings> _settings;
+        private readonly EmailSettings _emailSettings;
 
         public EmailSenderService(IOptionsMonitor<SchematicSettings> settings)
         {
-            Settings = settings ?? throw new ArgumentNullException(nameof(settings));
-            EmailSettings = Settings.CurrentValue.Email;
+            _settings = settings ?? throw new ArgumentNullException(nameof(settings));
+            _emailSettings = _settings.CurrentValue.Email;
         }
 
         private SmtpClient GetClient()
         {
             var client = new SmtpClient();
 
-            if (EmailSettings.SMTPCredentials != null) 
+            if (_emailSettings.SMTPCredentials != null) 
             {
-                client.Credentials = EmailSettings.SMTPCredentials;
+                client.Credentials = _emailSettings.SMTPCredentials;
             }
 
-            if (EmailSettings.SMTPHost.HasValue()) 
+            if (_emailSettings.SMTPHost.HasValue()) 
             {
-                client.Host = EmailSettings.SMTPHost;
+                client.Host = _emailSettings.SMTPHost;
             }
 
-            if (EmailSettings.SMTPPort > 0) 
+            if (_emailSettings.SMTPPort > 0) 
             {
-                client.Port = EmailSettings.SMTPPort.Value;
+                client.Port = _emailSettings.SMTPPort.Value;
             }
 
-            if (EmailSettings.SMTPEnableSSL) 
+            if (_emailSettings.SMTPEnableSSL) 
             {
                 client.EnableSsl = true;
             }
@@ -50,9 +50,9 @@ namespace Schematic.BaseInfrastructure
             {   
                 message.To.Add(email);
 
-                if (EmailSettings.FromMailAddress != null) 
+                if (_emailSettings.FromMailAddress != null) 
                 {
-                    message.From = EmailSettings.FromMailAddress;
+                    message.From = _emailSettings.FromMailAddress;
                 }
 
                 message.Subject = subject;
